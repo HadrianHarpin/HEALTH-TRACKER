@@ -3,11 +3,12 @@
 using namespace std;
 
 string activity[5] = {"Sangat Ringan", "Ringan", "Sedang", "Berat", "Sangat Berat"};
+
 void teksAwal() {
-    cout << "============================================================================================" << endl;
-    cout << "                            SELAMAT DATANG DI HEALTH TRACKER                                " << endl;
-    cout << "        Program Pengukur Kesehatan Melalui Perhitungan BMI dan Kalori Harian Anda!          " << endl;
-    cout << "--------------------------------------------------------------------------------------------" << endl;
+    cout << "=============================================================================================" << endl;
+    cout << "                               SELAMAT DATANG DI HEALTH TRACKER                              " << endl;
+    cout << "          Program Pengukur Kesehatan Melalui Perhitungan BMI dan Kalori Harian Anda!         " << endl;
+    cout << "---------------------------------------------------------------------------------------------" << endl;
     cout << "              Hasil dari Rekomendasi Kalori Harian Ini Hanya Sekedar Perkiraan.              " << endl;
     cout << "                  Konsultasikan Ke Ahli Gizi Untuk Rekomendasi Yang Pasti!                   " << endl;
     cout << "=============================================================================================" << endl;
@@ -56,4 +57,46 @@ void rekomendasi(double bmi) {
         } else {
             cout << "Anda obesitas. Disarankan konsultasi ke ahli gizi, kurangi kalori lebih banyak";
         }
+}
+
+
+int main()
+{
+    string nama;
+    double berat, tinggi, bmi, bmr, kalori;
+    int umur, aktivitasku;
+    char ulang, gender;
+
+    do
+    {
+        teksAwal();
+        cout << "Masukkan nama : ";
+        cin >> nama;
+        cout << "Masukkan berat badan (kg) : ";
+        cin >> berat;
+        cout << "Masukkan tinggi badan (cm) : ";
+        cin >> tinggi;
+        cout << "Masukkan umur (tahun) : ";
+        cin >> umur;
+        cout << "Jenis kelamin (L = pria, P = wanita) : ";
+        cin >> gender;
+
+        cout << endl <<  "Pilih Tingkat Aktivitas Harian : " << endl;
+
+        for (int i = 0; i < 5; i++)
+        {
+            cout << i + 1 << ". " << activity[i] << endl;
+        } 
+        cout << "Masukkan Pilihan (1-5) : ";
+        cin >> aktivitasku;
+
+        bmi = hitungBMI(tinggi, berat);
+        bmr = hitungBMR(tinggi, berat, umur, gender);
+
+
+
+    }
+    while (ulang == 'y');
+
+    return 0;
 }
