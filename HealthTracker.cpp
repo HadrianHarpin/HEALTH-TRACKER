@@ -17,14 +17,14 @@ double hitungBMI(double tinggi, double berat) {
     double BMI = berat / (tinggiMeter * tinggiMeter);
     return BMI; 
 }
-string kategoriBMI(double BMI) {
+void kategoriBMI(double BMI) {
     if (BMI < 18.5) {
-        return "Kurus";
-    } else if (BMI >= 18.5 && BMI < 24.9) {
-        return "Normal";
-    } else if (BMI >= 25.0 && BMI < 29.9) {
-        return "Gemuk";
+        cout << "Kekurangan Berat Badan" << endl;
+    } else if (BMI < 25) {
+        cout << "Normal" << endl;
+    } else if (BMI < 30) {
+        cout << "Kelebihan Berat Badan" << endl;
     } else {
-        return "Obesitas";
+        cout << "Obesitas" << endl;
     }
 }
