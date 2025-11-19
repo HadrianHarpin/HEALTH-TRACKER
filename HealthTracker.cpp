@@ -2,8 +2,6 @@
 #include <string>
 using namespace std;
 
-string activity[5] = {"Sangat Ringan", "Ringan", "Sedang", "Berat", "Sangat Berat"};
-
 void teksAwal() {
     cout << "=============================================================================================" << endl;
     cout << "                               SELAMAT DATANG DI HEALTH TRACKER                              " << endl;
@@ -12,6 +10,18 @@ void teksAwal() {
     cout << "              Hasil dari Rekomendasi Kalori Harian Ini Hanya Sekedar Perkiraan.              " << endl;
     cout << "                  Konsultasikan Ke Ahli Gizi Untuk Rekomendasi Yang Pasti!                   " << endl;
     cout << "=============================================================================================" << endl;
+}
+
+string activity[5] = {
+    "Sangat Ringan", "Ringan", "Sedang", "Berat", "Sangat Berat"
+};
+
+void tampilkanAktivitas() 
+{
+    for (int i = 0; i < 5; i++)
+    {
+        cout << i + 1 << ". " << activity[i] << endl;
+    }
 }
 
 double hitungBMI(double tinggi, double berat) {
@@ -33,8 +43,8 @@ void kategoriBMI(double BMI) {
 }
 
 double hitungBMR(double t, double b, double u, char g) {
-    double bmr;
 
+    double bmr;
     if (g == 'L' || g == 'l') {
         bmr = 10 * b + 6.25 * t - 5 * u + 5;
     } else if(g == 'P' || g == 'p'){
@@ -47,18 +57,17 @@ double hitungBMR(double t, double b, double u, char g) {
 }
 
 void rekomendasi(double bmi) {
-        cout << "Rekomendasi         : ";
-        if (bmi < 18.5) {
-            cout << "Anda kekurangan berat badan. Tambahkan asupan kalori, perbanyak makanan bergizi";
-        } else if (bmi < 25){
-            cout << "Berat badan anda normal. Pertahankan pola makan sehat dan olahraga teratur.\n";
-        } else if (bmi < 30) {
-            cout << "Anda mengalami kelebihan berat badan. Kurangi asupan kalori (sekitar 300-500 kka)";
-        } else {
-            cout << "Anda obesitas. Disarankan konsultasi ke ahli gizi, kurangi kalori lebih banyak";
-        }
+    cout << "Rekomendasi         : ";
+    if (bmi < 18.5) {
+        cout << "Anda kekurangan berat badan. Tambahkan asupan kalori, perbanyak makanan bergizi";
+    } else if (bmi < 25){
+        cout << "Berat badan anda normal. Pertahankan pola makan sehat dan olahraga teratur.\n";
+    } else if (bmi < 30) {
+        cout << "Anda mengalami kelebihan berat badan. Kurangi asupan kalori (sekitar 300-500 kka)";
+    } else {
+        cout << "Anda obesitas. Disarankan konsultasi ke ahli gizi, kurangi kalori lebih banyak";
+    }
 }
-
 
 int main()
 {
@@ -83,10 +92,7 @@ int main()
 
         cout << endl <<  "Pilih Tingkat Aktivitas Harian : " << endl;
 
-        for (int i = 0; i < 5; i++)
-        {
-            cout << i + 1 << ". " << activity[i] << endl;
-        } 
+        tampilkanAktivitas();
         cout << "Masukkan Pilihan (1-5) : ";
         cin >> aktivitasku;
 
