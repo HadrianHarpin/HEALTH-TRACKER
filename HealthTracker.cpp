@@ -4,7 +4,7 @@ using namespace std;
 
 void teksAwal() {
     cout << "=============================================================================================" << endl;
-    cout << "                               SELAMAT DATANG DI HEALTH TRACKER                              " << endl;
+    cout << "                              SELAMAT DATANG DI [HEALTH TRACKER]                             " << endl;
     cout << "          Program Pengukur Kesehatan Melalui Perhitungan BMI dan Kalori Harian Anda!         " << endl;
     cout << "---------------------------------------------------------------------------------------------" << endl;
     cout << "              Hasil dari Rekomendasi Kalori Harian Ini Hanya Sekedar Perkiraan.              " << endl;
@@ -51,18 +51,18 @@ double hitungBMR(double t, double b, double u, char g) {
     } else if(g == 'P' || g == 'p'){
         bmr = 10 * b + 6.25 * t - 5 * u - 161;
     }else{
-        cout << "Tidak Dikenali." << endl;
+        cout << "Tidak Dikenali. Kalori akan secara otomatis terhitung 0." << endl;
         bmr = 0.0;
     }
     return bmr;
 }
 
 void rekomendasi(double bmi) {
-    cout << "Rekomendasi         : ";
+    cout << "Rekomendasi            : ";
     if (bmi < 18.5) {
         cout << "Anda kekurangan berat badan. Tambahkan asupan kalori, perbanyak makanan bergizi";
     } else if (bmi < 25){
-        cout << "Berat badan anda normal. Pertahankan pola makan sehat dan olahraga teratur.\n";
+        cout << "Berat badan anda normal. Pertahankan pola makan sehat dan olahraga teratur.";
     } else if (bmi < 30) {
         cout << "Anda mengalami kelebihan berat badan. Kurangi asupan kalori (sekitar 300-500 kka)";
     } else {
@@ -81,7 +81,7 @@ int main()
     {
         teksAwal();
         cout << "Masukkan nama : ";
-        cin >> nama;
+        getline(cin, nama);
         cout << "Masukkan berat badan (kg) : ";
         cin >> berat;
         cout << "Masukkan tinggi badan (cm) : ";
@@ -114,7 +114,7 @@ int main()
         double kalori = bmr*faktorAktivitas;
 
         cout << endl << "============================================" << endl;
-        cout << "              HasilL Health Tracker           " << endl;
+        cout << "            HasilL Health Tracker           " << endl;
         cout << "============================================" << endl;
         
         cout << "Nama                : " << nama << endl;
