@@ -112,13 +112,31 @@ int main()
 
         double kalori = bmr*faktorAktivitas;
 
-        cout << "\nApakah ingin menghitung lagi? (y/n): ";
+        cout << endl << "============================================" << endl;
+        cout << "              HasilL Health Tracker           " << endl;
+        cout << "============================================" << endl;
+        
+        cout << "Nama                : " << nama << endl;
+        cout << "Umur                : " << umur << " tahun" << endl;
+        cout << "Berat Badan         : " << berat << " kg" << endl;
+        cout << "Tinggi Badan        : " << tinggi << " cm" << endl;
+        cout << "BMI                 : " << bmi << endl;
+        
+        kategori(bmi); //
+        cout << "Aktivitas Harian    : " << activity[aktivitasku - 1] << endl;
+        cout << "Kalori Harian       : " << kalori << " kkal" << endl;
+        cout << "---------------------------------------------" << endl;
+        
+        rekomendasi(bmi);
+        cout << endl << "============================================"  << endl;
+
+        cout << endl <<"Apakah ingin menghitung lagi? (y/n): ";
         cin >> ulang;
         
     }
     while  (ulang == 'y' || ulang == 'Y');
 
-    cout << "\nTerima kasih sudah menggunakan program ini!\n";
+    cout << endl <<"Terima kasih sudah menggunakan program ini!" << endl;
     
     return 0;
 }
