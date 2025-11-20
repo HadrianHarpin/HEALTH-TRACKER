@@ -99,10 +99,26 @@ int main()
         bmi = hitungBMI(tinggi, berat);
         bmr = hitungBMR(tinggi, berat, umur, gender);
 
+        double faktorAktivitas;
+        switch (aktivitasku)
+        {
+            case 1: faktorAktivitas = 1.2; break;
+            case 2: faktorAktivitas = 1.375; break;
+            case 3: faktorAktivitas = 1.55; break;
+            case 4: faktorAktivitas = 1.725; break;
+            case 5: faktorAktivitas = 1.9; break;
+            default: faktorAktivitas = 1.2; break;
+        }
 
+        double kalori = bmr*faktorAktivitas;
 
+        cout << "\nApakah ingin menghitung lagi? (y/n): ";
+        cin >> ulang;
+        
     }
-    while (ulang == 'y');
+    while  (ulang == 'y' || ulang == 'Y');
 
+    cout << "\nTerima kasih sudah menggunakan program ini!\n";
+    
     return 0;
 }
