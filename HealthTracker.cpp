@@ -31,6 +31,7 @@ double hitungBMI(double tinggi, double berat) {
 }
 
 void kategoriBMI(double BMI) {
+    cout << "Kategori BMI        : ";
     if (BMI < 18.5) {
         cout << "Kekurangan Berat Badan" << endl;
     } else if (BMI < 25) {
