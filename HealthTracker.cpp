@@ -123,7 +123,7 @@ int main()
         cout << "Tinggi Badan        : " << tinggi << " cm" << endl;
         cout << "BMI                 : " << bmi << endl;
         
-        kategori(bmi); //
+        kategoriBMI(bmi); 
         cout << "Aktivitas Harian    : " << activity[aktivitasku - 1] << endl;
         cout << "Kalori Harian       : " << kalori << " kkal" << endl;
         cout << "---------------------------------------------" << endl;
